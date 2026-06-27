@@ -153,3 +153,331 @@ btn.onclick = ()=>{
     });
 
 };
+
+
+/* ==========================================
+PROFESSIONAL LIGHTBOX
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const images =
+    document.querySelectorAll(".gallery-track img");
+
+    const lightbox =
+    document.getElementById("lightbox");
+
+    const lightboxImg =
+    document.querySelector(".lightbox-image");
+
+    const closeBtn =
+    document.querySelector(".close-lightbox");
+
+    const nextBtn =
+    document.querySelector(".next-lightbox");
+
+    const prevBtn =
+    document.querySelector(".prev-lightbox");
+
+    const zoomIn =
+    document.getElementById("zoomIn");
+
+    const zoomOut =
+    document.getElementById("zoomOut");
+
+    const captionTitle =
+    document.querySelector(".caption-title");
+
+    const captionDesc =
+    document.querySelector(".caption-desc");
+
+    let currentIndex = 0;
+    let zoomLevel = 1;
+
+    /* Open */
+
+    function showImage(index){
+
+        currentIndex = index;
+
+        lightbox.classList.add("show");
+
+        lightboxImg.src = images[index].src;
+
+        captionTitle.textContent =
+            images[index].dataset.title || "";
+
+        captionDesc.textContent =
+            images[index].dataset.desc || "";
+
+        zoomLevel = 1;
+        lightboxImg.style.transform = "scale(1)";
+    }
+
+    /* Gallery Click */
+
+    images.forEach((img,index)=>{
+
+        img.addEventListener("click",()=>{
+
+            showImage(index);
+
+        });
+
+    });
+
+    /* Close */
+
+    closeBtn.onclick = ()=>{
+
+        lightbox.classList.remove("show");
+
+    };
+
+    /* Next */
+
+    nextBtn.onclick = ()=>{
+
+        currentIndex++;
+
+        if(currentIndex >= images.length)
+            currentIndex = 0;
+
+        showImage(currentIndex);
+
+    };
+
+    /* Previous */
+
+    prevBtn.onclick = ()=>{
+
+        currentIndex--;
+
+        if(currentIndex < 0)
+            currentIndex = images.length - 1;
+
+        showImage(currentIndex);
+
+    };
+
+    /* Keyboard */
+
+    document.addEventListener("keydown",(e)=>{
+
+        if(!lightbox.classList.contains("show"))
+            return;
+
+        if(e.key === "ArrowRight")
+            nextBtn.click();
+
+        if(e.key === "ArrowLeft")
+            prevBtn.click();
+
+        if(e.key === "Escape")
+            closeBtn.click();
+
+    });
+
+    /* Zoom */
+
+    zoomIn.onclick = ()=>{
+
+        zoomLevel += .2;
+
+        lightboxImg.style.transform =
+            `scale(${zoomLevel})`;
+
+    };
+
+    zoomOut.onclick = ()=>{
+
+        if(zoomLevel > .4){
+
+            zoomLevel -= .2;
+
+            lightboxImg.style.transform =
+                `scale(${zoomLevel})`;
+
+        }
+
+    };
+
+    /* Click Outside */
+
+    lightbox.addEventListener("click",(e)=>{
+
+        if(e.target === lightbox){
+
+            lightbox.classList.remove("show");
+
+        }
+
+    });
+
+});
+
+
+/* ==========================================
+   CONTENT & IMAGE PROTECTION
+========================================== */
+
+// منع كليك يمين على الموقع بالكامل
+document.addEventListener("contextmenu", (e) => {
+    e.preventDefault();
+});
+
+// منع سحب الصور
+document.querySelectorAll("img").forEach(img => {
+
+    img.setAttribute("draggable", "false");
+
+    img.addEventListener("dragstart", (e) => {
+        e.preventDefault();
+    });
+
+});
+
+// منع النسخ والقص والتحديد
+document.addEventListener("copy", (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener("cut", (e) => {
+    e.preventDefault();
+});
+
+document.addEventListener("selectstart", (e) => {
+    e.preventDefault();
+});
+
+// منع بعض اختصارات لوحة المفاتيح
+document.addEventListener("keydown", (e) => {
+
+    // F12
+    if (e.key === "F12") {
+        e.preventDefault();
+    }
+
+    // Ctrl + U
+    if (e.ctrlKey && e.key.toLowerCase() === "u") {
+        e.preventDefault();
+    }
+
+    // Ctrl + S
+    if (e.ctrlKey && e.key.toLowerCase() === "s") {
+        e.preventDefault();
+    }
+
+    // Ctrl + Shift + I
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
+        e.preventDefault();
+    }
+
+    // Ctrl + Shift + J
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
+        e.preventDefault();
+    }
+
+    // Ctrl + Shift + C
+    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
+        e.preventDefault();
+    }
+
+});
+
+// محاولة اكتشاف فتح Developer Tools
+let devtoolsOpen = false;
+
+setInterval(() => {
+
+    if (
+        window.outerWidth - window.innerWidth > 160 ||
+        window.outerHeight - window.innerHeight > 160
+    ) {
+
+        if (!devtoolsOpen) {
+
+            devtoolsOpen = true;
+
+            document.body.innerHTML = `
+                <div style="
+                    height:100vh;
+                    display:flex;
+                    justify-content:center;
+                    align-items:center;
+                    flex-direction:column;
+                    background:#0f172a;
+                    color:white;
+                    font-family:Segoe UI;
+                    text-align:center;
+                ">
+                    <h1>Access Restricted</h1>
+                    <p>Developer tools are not allowed on this website.</p>
+                </div>
+            `;
+        }
+
+    } else {
+
+        devtoolsOpen = false;
+
+    }
+
+}, 1000);
+
+let typed;
+
+function updateTyping(translations){
+
+    if(typed){
+        typed.destroy();
+    }
+
+    typed = new Typed(".typing",{
+
+        strings:[
+            translations.typing_1,
+            translations.typing_2,
+            translations.typing_3,
+            translations.typing_4
+        ],
+
+        typeSpeed:70,
+        backSpeed:40,
+        backDelay:1500,
+        loop:true
+
+    });
+
+}
+
+
+window.addEventListener("scroll",()=>{
+
+    const scrollTop =
+    document.documentElement.scrollTop;
+
+    const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+
+    const progress =
+    (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progressBar")
+    .style.width = progress + "%";
+
+});
+
+fetch(
+"https://api.countapi.xyz/hit/dr-soliman-portfolio/visits"
+)
+
+.then(response => response.json())
+
+.then(data => {
+
+    document.getElementById("visitors").innerText =
+    data.value;
+
+});
