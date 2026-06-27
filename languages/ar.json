@@ -1,0 +1,140 @@
+{
+    "nav_about": "عنّي",
+    "nav_services": "الخدمات",
+    "nav_skills": "المهارات",
+    "nav_projects": "المشاريع",
+    "nav_certificates": "الشهادات",
+    "nav_gallery": "المعرض",
+    "nav_reviews": "آراء العملاء",
+    "nav_contact": "التواصل",
+
+    "hero_title": "مرحبًا، أنا <span>سليمان محمد</span>",
+
+    "typing_1": "مطور ويب متكامل | باحث في تكنولوجيا المعلومات",
+    "typing_2": "معيد جامعي",
+    "typing_3": "مهندس برمجيات",
+    "typing_4": "مستقل (Freelancer)",
+
+    "hero_desc": "مستقل، ومعيد جامعي، وباحث ماجستير، وطالب دكتوراه مستقبلي. شغوف ببناء تطبيقات ويب حديثة وتقديم حلول رقمية مبتكرة.",
+
+    "btn_projects": "عرض المشاريع",
+    "btn_cv": "تحميل السيرة الذاتية",
+
+    "stats_title": "إحصائياتي",
+    "stats_clients": "العملاء",
+    "stats_reviews": "التقييمات",
+    "stats_completion": "نسبة الإنجاز %",
+    "stats_services": "الخدمات الاحترافية",
+    "stats_response": "متوسط وقت الرد (دقائق)",
+
+    "about_title": "نبذة عنّي",
+    "about_desc": "أنا د. سليمان محمد، متخصص في تكنولوجيا المعلومات، مستقل وباحث. حاصل على بكالوريوس في تكنولوجيا المعلومات من جامعة السويس. أتابع حاليًا دراسة الماجستير في تكنولوجيا المعلومات وأستعد لمرحلة الدكتوراه. عملت كمعيد في الأكاديمية الحديثة وجامعة السويس الأهلية. اهتمامي الأساسي هو تطوير الويب، هندسة البرمجيات، البحث العلمي، والعمل الحر.",
+
+    "experience_title": "الخبرات المهنية",
+
+    "exp_ta_title": "معيد",
+    "exp_ta_desc": "عملت كمعيد في الأكاديمية الحديثة وجامعة السويس الوطنية.",
+
+    "exp_free_title": "مستقل",
+    "exp_free_desc": "تقديم خدمات تطوير برمجيات احترافية عبر منصات العمل الحر.",
+
+    "exp_research_title": "باحث ماجستير",
+    "exp_research_desc": "إجراء أبحاث علمية في تكنولوجيا المعلومات، الأمن السيبراني، وهندسة البرمجيات.",
+
+    "services_title": "خدماتي",
+
+    "service_uml_title": "هندسة البرمجيات وتصميم UML",
+    "service_uml_desc": "تصميم مخططات UML احترافية تشمل Use Case وClass وSequence وActivity وER.",
+
+    "service_web_title": "تطوير مواقع الويب",
+    "service_web_desc": "تصميم وتطوير مواقع متجاوبة باستخدام HTML5 وCSS3 وPHP وMySQL.",
+
+    "service_translation_title": "الترجمة والتدقيق اللغوي",
+    "service_translation_desc": "تقديم خدمات ترجمة دقيقة وتدقيق لغوي احترافي بين العربية والإنجليزية.",
+
+    "service_pdf_title": "تحويل الملفات والمستندات",
+    "service_pdf_desc": "تحويل ملفات PDF والصور والمستندات الممسوحة إلى Word قابل للتعديل بدقة عالية.",
+
+    "service_audio_title": "تفريغ صوتي وفيديو",
+    "service_audio_desc": "تفريغ دقيق للمحاضرات والمقابلات والملفات الصوتية والمرئية.",
+
+    "service_presentation_title": "تصميم العروض التقديمية",
+    "service_presentation_desc": "تصميم عروض PowerPoint احترافية وجذابة باللغة العربية والإنجليزية.",
+
+    "service_tutoring_title": "شرح البرمجة والتدريس",
+    "service_tutoring_desc": "شرح البرمجة وحل المشكلات بما في ذلك لغة الأسمبلي ومواد هندسة البرمجيات.",
+
+    "service_writing_title": "الكتابة التقنية",
+    "service_writing_desc": "كتابة محتوى احترافي للمواقع والتطبيقات والمنتجات التقنية.",
+
+    "service_cv_title": "تصميم السيرة الذاتية",
+    "service_cv_desc": "تصميم سير ذاتية احترافية بالعربية والإنجليزية.",
+
+    "service_reports_title": "كتابة وتنسيق التقارير",
+    "service_reports_desc": "إعداد وتنسيق وتحرير التقارير الأكاديمية والتقنية والتجارية بشكل احترافي.",
+
+    "btn_khamsat": "عرض جميع الخدمات على خمسات",
+
+    "skills_title": "المهارات التقنية",
+
+    "projects_title": "المشاريع",
+
+    "project_erp_title": "نظام إدارة الموارد ERP",
+    "project_erp_desc": "نظام متكامل لإدارة المخزون والمبيعات والمشتريات والفروع.",
+
+    "project_anpr_title": "نظام التعرف على لوحات السيارات",
+    "project_anpr_desc": "مشروع تخرج يعتمد على التعرف التلقائي على لوحات السيارات.",
+
+    "project_ecommerce_title": "منصة تجارة إلكترونية",
+    "project_ecommerce_desc": "منصة تسوق إلكتروني متكاملة مع أنظمة دفع حديثة.",
+
+    "project_hospital_title": "نظام إدارة المستشفيات",
+    "project_hospital_desc": "نظام شامل لإدارة المرضى والمواعيد والسجلات الطبية.",
+
+    "project_portfolio_title": "مواقع بورتفوليو",
+    "project_portfolio_desc": "تصميم وتطوير مواقع شخصية وشركات بشكل احترافي.",
+
+    "project_freelance_title": "حلول العمل الحر",
+    "project_freelance_desc": "تقديم حلول برمجية مخصصة حسب احتياجات العملاء.",
+
+    "certificates_title": "الشهادات",
+
+    "certificate_huawei_title": "شهادة Huawei HCIA",
+    "certificate_huawei_desc": "شهادة معتمدة من شركة هواوي في تكنولوجيا المعلومات.",
+
+    "certificate_security_title": "أمن الشبكات",
+    "certificate_security_desc": "تدريب متخصص في الأمن السيبراني وحماية الشبكات.",
+
+    "certificate_web_title": "تطوير الويب",
+    "certificate_web_desc": "تدريب متقدم في تطوير مواقع الويب.",
+
+    "certificate_research_title": "منهجية البحث العلمي",
+    "certificate_research_desc": "تدريب على البحث العلمي والنشر الأكاديمي.",
+
+    "gallery_title": "المعرض",
+    "gallery_image": "صورة من المعرض",
+    "gallery_close": "إغلاق",
+    "gallery_next": "التالي",
+    "gallery_prev": "السابق",
+
+    "reviews_title": "آراء العملاء",
+
+    "review1": "احترافية وسرعة في التنفيذ وتواصل ممتاز.",
+    "review2": "تم تسليم العمل في الوقت المطلوب وبجودة عالية جدًا.",
+    "review3": "أنصح به بشدة، مهارات تقنية ممتازة واحترافية عالية.",
+
+    "client_word": "عميل",
+
+    "contact_title": "تواصل معي",
+
+    "contact_email": "البريد الإلكتروني",
+    "contact_phone": "الهاتف",
+    "contact_khamsat": "خمسات",
+    "contact_linkedin": "لينكد إن",
+
+    "visitors_count": "زوار الموقع",
+
+    "footer_name": "د. سليمان محمد",
+    "footer_job": "مطور ويب متكامل | باحث في تكنولوجيا المعلومات",
+    "footer_copy": "© 2026 جميع الحقوق محفوظة"
+}

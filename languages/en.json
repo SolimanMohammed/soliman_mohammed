@@ -1,0 +1,141 @@
+{
+    "nav_about":"About",
+    "nav_services":"Services",
+    "nav_skills":"Skills",
+    "nav_projects":"Projects",
+    "nav_certificates":"Certificates",
+    "nav_gallery":"Gallery",
+    "nav_reviews":"Reviews",
+    "nav_contact":"Contact",
+
+    
+    "hero_title": "Hi, I'm <span> Soliman Mohammed</span>",
+
+    "typing_1": "Full Stack Developer | IT Researcher",
+    "typing_2": "Teaching Assistant",
+    "typing_3": "Software Engineer",
+    "typing_4": "Freelancer",
+
+    "hero_desc":"Freelancer, Teaching Assistant, Master's Researcher, and aspiring PhD candidate. Passionate about building modern web applications and delivering innovative digital solutions.",
+
+    "btn_projects":"View Projects",
+    "btn_cv":"Download CV",
+
+    "stats_title":"My Statistics",
+    "stats_clients":"Clients",
+    "stats_reviews":"Reviews",
+    "stats_completion":"Completion Rate %",
+    "stats_services":"Professional Services",
+    "stats_response":"Average Response Time (Minutes)",
+
+    "about_title":"About Me",
+    "about_desc":"I am Dr. Soliman Mohammed, an IT specialist, freelancer, and researcher. I hold a Bachelor's degree in Information Technology from Suez University with a GPA of 3.54. Currently, I am pursuing my Master's degree in Information Technology while preparing for my future PhD journey. I have worked as a Teaching Assistant at Modern Academy and Suez National University. My primary interests include Full Stack Development, Software Engineering, Scientific Research, and Freelancing.",
+
+    "experience_title":"Professional Experience",
+
+    "exp_ta_title":"Experience",
+    "exp_ta_desc":"Worked as a Teaching Assistant at Modern Academy and Suez National University.",
+
+    "exp_free_title":"Freelancer",
+    "exp_free_desc":"Providing professional Full Stack Development and technical services through freelance platforms.",
+
+    "exp_research_title":"Master's Researcher",
+    "exp_research_desc":"Conducting scientific research in Information Technology, Cybersecurity, and Software Engineering.",
+
+    "services_title":"My Services",
+
+    "service_uml_title":"Software Engineering & UML Design",
+    "service_uml_desc":"Designing professional UML diagrams including Use Case, Class, Sequence, Activity, and ER diagrams for software projects.",
+
+    "service_web_title":"Web Development",
+    "service_web_desc":"Designing and developing responsive websites using HTML5, CSS3, PHP, and MySQL.",
+
+    "service_translation_title":"Translation & Proofreading",
+    "service_translation_desc":"Providing accurate translation and professional proofreading services in both Arabic and English languages.",
+
+    "service_pdf_title":"PDF & Document Conversion",
+    "service_pdf_desc":"Converting scanned documents, PDFs, and images into fully editable Word documents with high accuracy.",
+
+    "service_audio_title":"Audio & Video Transcription",
+    "service_audio_desc":"Accurate transcription of lectures, interviews, and multimedia files in Arabic and English.",
+
+    "service_presentation_title":"Presentation Design",
+    "service_presentation_desc":"Creating professional and visually appealing PowerPoint presentations in Arabic and English.",
+
+    "service_tutoring_title":"Programming Tutoring",
+    "service_tutoring_desc":"Providing programming tutoring and solving complex assignments, including Assembly Language and Software Engineering subjects.",
+
+    "service_writing_title":"Technical Writing",
+    "service_writing_desc":"Writing professional descriptions and technical content for websites, applications, and digital products.",
+
+    "service_cv_title":"CV & Resume Design",
+    "service_cv_desc":"Designing modern and professional CVs and resumes in Arabic and English.",
+
+    "service_reports_title":"Report Writing & Formatting",
+    "service_reports_desc":"Preparing, formatting, and professionally editing academic, technical, and business reports.",
+
+    "btn_khamsat":"View All Services on Khamsat",
+
+    "skills_title":"Technical Skills",
+
+    "projects_title":"Projects",
+
+    "project_erp_title":"ERP Management System",
+    "project_erp_desc":"A complete enterprise resource planning system for managing inventory, sales, purchases, branches, and returns.",
+
+    "project_anpr_title":"ANPR System",
+    "project_anpr_desc":"Automatic Number Plate Recognition system developed as a graduation project.",
+
+    "project_ecommerce_title":"E-Commerce Platform",
+    "project_ecommerce_desc":"An online shopping platform integrated with modern payment solutions.",
+
+    "project_hospital_title":"Hospital Management System",
+    "project_hospital_desc":"A comprehensive solution for managing patients, appointments, and medical records.",
+
+    "project_portfolio_title":"Portfolio Websites",
+    "project_portfolio_desc":"Design and development of modern portfolio websites for individuals and businesses.",
+
+    "project_freelance_title":"Freelance Solutions",
+    "project_freelance_desc":"Delivering customized software solutions tailored to clients' requirements.",
+
+    "certificates_title":"Certificates",
+
+    "certificate_huawei_title":"Huawei HCIA",
+    "certificate_huawei_desc":"Huawei Certified ICT Associate (HCIA) certification from Huawei Technologies.",
+
+    "certificate_security_title":"Network Security",
+    "certificate_security_desc":"Specialized training in cybersecurity and network protection.",
+
+    "certificate_web_title":"Web Development",
+    "certificate_web_desc":"Advanced Full Stack Web Development training.",
+
+    "certificate_research_title":"Research Methodology",
+    "certificate_research_desc":"Training in scientific research methodologies and academic publishing.",
+
+    "gallery_title":"Gallery",
+    "gallery_image":"Gallery Image",
+    "gallery_close":"Close",
+    "gallery_next":"Next",
+    "gallery_prev":"Previous",
+
+    "reviews_title":"Client Reviews",
+
+    "review1":"Professional, fast response, and excellent communication.",
+    "review2":"Delivered exactly what I needed on time with outstanding quality.",
+    "review3":"Highly recommended. Exceptional technical expertise and professionalism.",
+
+    "client_word":"Client",
+
+    "contact_title":"Contact",
+
+    "contact_email":"Email",
+    "contact_phone":"Phone",
+    "contact_khamsat":"Khamsat",
+    "contact_linkedin":"LinkedIn",
+
+    "visitors_count":"Website Visitors",
+
+    "footer_name":"Dr. Soliman Mohammed",
+    "footer_job":"Full Stack Developer | IT Researcher",
+    "footer_copy":"© 2026 All Rights Reserved."
+}
