@@ -1,51 +1,54 @@
-// =========================
-// THEME TOGGLE
-// =========================
+/* ==================================================
+   THEME TOGGLE SYSTEM
+================================================== */
 
 const themeToggle = document.getElementById("themeToggle");
 const icon = document.querySelector(".icon");
 
-if(localStorage.getItem("theme") === "light"){
+if (localStorage.getItem("theme") === "light") {
+
     document.body.classList.add("light-mode");
     icon.textContent = "☀️";
+
 }
 
 themeToggle.addEventListener("click", () => {
 
     document.body.classList.toggle("light-mode");
 
-    if(document.body.classList.contains("light-mode")){
+    if (document.body.classList.contains("light-mode")) {
 
         icon.textContent = "☀️";
-        localStorage.setItem("theme","light");
+        localStorage.setItem("theme", "light");
 
-    }else{
+    } else {
 
         icon.textContent = "🌙";
-        localStorage.setItem("theme","dark");
+        localStorage.setItem("theme", "dark");
 
     }
 
 });
 
-// =========================
-// SECTION ANIMATION
-// =========================
+
+/* ==================================================
+   SECTION REVEAL ANIMATION
+================================================== */
 
 const sections = document.querySelectorAll("section");
 
-function revealSections(){
+function revealSections() {
 
     sections.forEach(section => {
 
         const sectionTop = section.getBoundingClientRect().top;
 
-        if(sectionTop < window.innerHeight * 0.8){
+        if (sectionTop < window.innerHeight * 0.8) {
 
             section.classList.add("section-show");
             section.classList.add("section-active");
 
-        }else{
+        } else {
 
             section.classList.remove("section-active");
 
@@ -58,9 +61,10 @@ function revealSections(){
 window.addEventListener("scroll", revealSections);
 window.addEventListener("load", revealSections);
 
-// =========================
-// ACTIVE NAV LINK
-// =========================
+
+/* ==================================================
+   ACTIVE NAVIGATION LINKS
+================================================== */
 
 const navLinks = document.querySelectorAll(".nav-links a");
 
@@ -72,7 +76,7 @@ window.addEventListener("scroll", () => {
 
         const sectionTop = section.offsetTop - 150;
 
-        if(window.scrollY >= sectionTop){
+        if (window.scrollY >= sectionTop) {
 
             current = section.getAttribute("id");
 
@@ -84,7 +88,7 @@ window.addEventListener("scroll", () => {
 
         link.classList.remove("active");
 
-        if(link.getAttribute("href") === "#" + current){
+        if (link.getAttribute("href") === "#" + current) {
 
             link.classList.add("active");
 
@@ -95,10 +99,13 @@ window.addEventListener("scroll", () => {
 });
 
 
+/* ==================================================
+   STATISTICS COUNTER
+================================================== */
 
-const counters = document.querySelectorAll('.counter');
+const counters = document.querySelectorAll(".counter");
 
-const startCounters = () => {
+function startCounters() {
 
     counters.forEach(counter => {
 
@@ -106,11 +113,11 @@ const startCounters = () => {
 
         let count = 0;
 
-        const updateCounter = () => {
+        function updateCounter() {
 
             const increment = target / 100;
 
-            if(count < target){
+            if (count < target) {
 
                 count += increment;
 
@@ -118,85 +125,210 @@ const startCounters = () => {
 
                 requestAnimationFrame(updateCounter);
 
-            }else{
+            } else {
 
                 counter.innerText = target;
 
             }
 
-        };
+        }
 
         updateCounter();
 
     });
 
-};
+}
 
 window.addEventListener("load", startCounters);
 
-const btn = document.getElementById('scrollTopBtn');
 
-window.addEventListener('scroll',()=>{
+/* ==================================================
+   SCROLL TO TOP BUTTON
+================================================== */
 
-    if(window.scrollY > 500)
-        btn.classList.add('show');
-    else
-        btn.classList.remove('show');
+const scrollTopBtn = document.getElementById("scrollTopBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        scrollTopBtn.classList.add("show");
+
+    } else {
+
+        scrollTopBtn.classList.remove("show");
+
+    }
 
 });
 
-btn.onclick = ()=>{
+scrollTopBtn.addEventListener("click", () => {
 
     window.scrollTo({
-        top:0,
-        behavior:'smooth'
+        top: 0,
+        behavior: "smooth"
     });
 
-};
+});
 
 
-/* ==========================================
-PROFESSIONAL LIGHTBOX
-========================================== */
+/* ==================================================
+   SCROLL PROGRESS BAR
+================================================== */
+
+window.addEventListener("scroll", () => {
+
+    const scrollTop = document.documentElement.scrollTop;
+
+    const scrollHeight =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+
+    const progress = (scrollTop / scrollHeight) * 100;
+
+    document.getElementById("progressBar")
+        .style.width = progress + "%";
+
+});
+
+
+/* ==================================================
+   VISITOR COUNTER
+================================================== */
+
+fetch(
+    "https://api.countapi.xyz/hit/dr-soliman-portfolio/visits"
+)
+
+.then(response => response.json())
+
+.then(data => {
+
+    document.getElementById("visitors").innerText =
+        data.value;
+
+})
+
+.catch(error => console.log(error));
+
+
+/* ==================================================
+   TYPING ANIMATION
+================================================== */
+
+let typed;
+
+function updateTyping(translations) {
+
+    if (typed) {
+
+        typed.destroy();
+
+    }
+
+    typed = new Typed(".typing", {
+
+        strings: [
+
+            translations.typing_1,
+            translations.typing_2,
+            translations.typing_3,
+            translations.typing_4
+
+        ],
+
+        typeSpeed: 70,
+        backSpeed: 40,
+        backDelay: 1500,
+        loop: true
+
+    });
+
+}
+
+
+/* ==================================================
+   MOBILE MENU
+================================================== */
+
+const menuToggle =
+    document.getElementById("menuToggle");
+
+const navMenu =
+    document.querySelector(".nav-links");
+
+const overlay =
+    document.querySelector(".menu-overlay");
+
+menuToggle.addEventListener("click", () => {
+
+    menuToggle.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    overlay.classList.toggle("show");
+
+});
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navMenu.classList.remove("active");
+        menuToggle.classList.remove("active");
+        overlay.classList.remove("show");
+
+    });
+
+});
+
+overlay.addEventListener("click", () => {
+
+    navMenu.classList.remove("active");
+    menuToggle.classList.remove("active");
+    overlay.classList.remove("show");
+
+});
+
+
+/* ==================================================
+   PROFESSIONAL GALLERY LIGHTBOX
+================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     const images =
-    document.querySelectorAll(".gallery-track img");
+        document.querySelectorAll(".gallery-track img");
 
     const lightbox =
-    document.getElementById("lightbox");
+        document.getElementById("lightbox");
 
     const lightboxImg =
-    document.querySelector(".lightbox-image");
+        document.querySelector(".lightbox-image");
 
     const closeBtn =
-    document.querySelector(".close-lightbox");
+        document.querySelector(".close-lightbox");
 
     const nextBtn =
-    document.querySelector(".next-lightbox");
+        document.querySelector(".next-lightbox");
 
     const prevBtn =
-    document.querySelector(".prev-lightbox");
+        document.querySelector(".prev-lightbox");
 
     const zoomIn =
-    document.getElementById("zoomIn");
+        document.getElementById("zoomIn");
 
     const zoomOut =
-    document.getElementById("zoomOut");
+        document.getElementById("zoomOut");
 
     const captionTitle =
-    document.querySelector(".caption-title");
+        document.querySelector(".caption-title");
 
     const captionDesc =
-    document.querySelector(".caption-desc");
+        document.querySelector(".caption-desc");
 
     let currentIndex = 0;
     let zoomLevel = 1;
 
-    /* Open */
-
-    function showImage(index){
+    function showImage(index) {
 
         currentIndex = index;
 
@@ -211,14 +343,15 @@ document.addEventListener("DOMContentLoaded", () => {
             images[index].dataset.desc || "";
 
         zoomLevel = 1;
-        lightboxImg.style.transform = "scale(1)";
+
+        lightboxImg.style.transform =
+            "scale(1)";
+
     }
 
-    /* Gallery Click */
+    images.forEach((img, index) => {
 
-    images.forEach((img,index)=>{
-
-        img.addEventListener("click",()=>{
+        img.addEventListener("click", () => {
 
             showImage(index);
 
@@ -226,61 +359,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
-    /* Close */
-
-    closeBtn.onclick = ()=>{
-
+    closeBtn.onclick = () =>
         lightbox.classList.remove("show");
 
-    };
+    nextBtn.onclick = () => {
 
-    /* Next */
-
-    nextBtn.onclick = ()=>{
-
-        currentIndex++;
-
-        if(currentIndex >= images.length)
-            currentIndex = 0;
+        currentIndex =
+            (currentIndex + 1) % images.length;
 
         showImage(currentIndex);
 
     };
 
-    /* Previous */
+    prevBtn.onclick = () => {
 
-    prevBtn.onclick = ()=>{
-
-        currentIndex--;
-
-        if(currentIndex < 0)
-            currentIndex = images.length - 1;
+        currentIndex =
+            (currentIndex - 1 + images.length)
+            % images.length;
 
         showImage(currentIndex);
 
     };
 
-    /* Keyboard */
-
-    document.addEventListener("keydown",(e)=>{
-
-        if(!lightbox.classList.contains("show"))
-            return;
-
-        if(e.key === "ArrowRight")
-            nextBtn.click();
-
-        if(e.key === "ArrowLeft")
-            prevBtn.click();
-
-        if(e.key === "Escape")
-            closeBtn.click();
-
-    });
-
-    /* Zoom */
-
-    zoomIn.onclick = ()=>{
+    zoomIn.onclick = () => {
 
         zoomLevel += .2;
 
@@ -289,9 +390,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-    zoomOut.onclick = ()=>{
+    zoomOut.onclick = () => {
 
-        if(zoomLevel > .4){
+        if (zoomLevel > .4) {
 
             zoomLevel -= .2;
 
@@ -302,11 +403,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-    /* Click Outside */
+    document.addEventListener("keydown", e => {
 
-    lightbox.addEventListener("click",(e)=>{
+        if (!lightbox.classList.contains("show"))
+            return;
 
-        if(e.target === lightbox){
+        if (e.key === "ArrowRight")
+            nextBtn.click();
+
+        if (e.key === "ArrowLeft")
+            prevBtn.click();
+
+        if (e.key === "Escape")
+            closeBtn.click();
+
+    });
+
+    lightbox.addEventListener("click", e => {
+
+        if (e.target === lightbox) {
 
             lightbox.classList.remove("show");
 
@@ -317,167 +432,46 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-/* ==========================================
+/* ==================================================
    CONTENT & IMAGE PROTECTION
-========================================== */
+================================================== */
 
-// منع كليك يمين على الموقع بالكامل
-document.addEventListener("contextmenu", (e) => {
-    e.preventDefault();
-});
+document.addEventListener("contextmenu",
+    e => e.preventDefault());
 
-// منع سحب الصور
+document.addEventListener("copy",
+    e => e.preventDefault());
+
+document.addEventListener("cut",
+    e => e.preventDefault());
+
+document.addEventListener("selectstart",
+    e => e.preventDefault());
+
 document.querySelectorAll("img").forEach(img => {
 
     img.setAttribute("draggable", "false");
 
-    img.addEventListener("dragstart", (e) => {
+    img.addEventListener("dragstart", e => {
+
         e.preventDefault();
+
     });
 
 });
 
-// منع النسخ والقص والتحديد
-document.addEventListener("copy", (e) => {
-    e.preventDefault();
-});
-
-document.addEventListener("cut", (e) => {
-    e.preventDefault();
-});
-
-document.addEventListener("selectstart", (e) => {
-    e.preventDefault();
-});
-
-// منع بعض اختصارات لوحة المفاتيح
-document.addEventListener("keydown", (e) => {
-
-    // F12
-    if (e.key === "F12") {
-        e.preventDefault();
-    }
-
-    // Ctrl + U
-    if (e.ctrlKey && e.key.toLowerCase() === "u") {
-        e.preventDefault();
-    }
-
-    // Ctrl + S
-    if (e.ctrlKey && e.key.toLowerCase() === "s") {
-        e.preventDefault();
-    }
-
-    // Ctrl + Shift + I
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "i") {
-        e.preventDefault();
-    }
-
-    // Ctrl + Shift + J
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "j") {
-        e.preventDefault();
-    }
-
-    // Ctrl + Shift + C
-    if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "c") {
-        e.preventDefault();
-    }
-
-});
-
-// محاولة اكتشاف فتح Developer Tools
-let devtoolsOpen = false;
-
-setInterval(() => {
+document.addEventListener("keydown", e => {
 
     if (
-        window.outerWidth - window.innerWidth > 160 ||
-        window.outerHeight - window.innerHeight > 160
+        e.key === "F12" ||
+        (e.ctrlKey && e.key.toLowerCase() === "u") ||
+        (e.ctrlKey && e.key.toLowerCase() === "s") ||
+        (e.ctrlKey && e.shiftKey &&
+            ["i", "j", "c"].includes(e.key.toLowerCase()))
     ) {
 
-        if (!devtoolsOpen) {
-
-            devtoolsOpen = true;
-
-            document.body.innerHTML = `
-                <div style="
-                    height:100vh;
-                    display:flex;
-                    justify-content:center;
-                    align-items:center;
-                    flex-direction:column;
-                    background:#0f172a;
-                    color:white;
-                    font-family:Segoe UI;
-                    text-align:center;
-                ">
-                    <h1>Access Restricted</h1>
-                    <p>Developer tools are not allowed on this website.</p>
-                </div>
-            `;
-        }
-
-    } else {
-
-        devtoolsOpen = false;
+        e.preventDefault();
 
     }
-
-}, 1000);
-
-let typed;
-
-function updateTyping(translations){
-
-    if(typed){
-        typed.destroy();
-    }
-
-    typed = new Typed(".typing",{
-
-        strings:[
-            translations.typing_1,
-            translations.typing_2,
-            translations.typing_3,
-            translations.typing_4
-        ],
-
-        typeSpeed:70,
-        backSpeed:40,
-        backDelay:1500,
-        loop:true
-
-    });
-
-}
-
-
-window.addEventListener("scroll",()=>{
-
-    const scrollTop =
-    document.documentElement.scrollTop;
-
-    const scrollHeight =
-    document.documentElement.scrollHeight -
-    document.documentElement.clientHeight;
-
-    const progress =
-    (scrollTop / scrollHeight) * 100;
-
-    document.getElementById("progressBar")
-    .style.width = progress + "%";
-
-});
-
-fetch(
-"https://api.countapi.xyz/hit/dr-soliman-portfolio/visits"
-)
-
-.then(response => response.json())
-
-.then(data => {
-
-    document.getElementById("visitors").innerText =
-    data.value;
 
 });
