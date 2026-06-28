@@ -820,13 +820,12 @@ html[dir="rtl"] .nav-links{
     flex-direction: row-reverse;
 }
 
+#skills .card{
+    text-align:center;
+}
 @media(max-width:768px){
     html[dir="rtl"] .nav-links{
         flex-direction: column;
-    }
-
-    html[dir="rtl"] #skills .card{
-        text-align:center;
     }
 }
 
