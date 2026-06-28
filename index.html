@@ -26,6 +26,18 @@
       <nav class="navbar">
         <div class="logo">Dr. Soliman<span>.</span></div>
         <ul class="nav-links">
+          <div class="mobile-profile">
+            <img src="assets/profile.jpg" alt="Soliman">
+            <h3>Dr. Soliman Mohammed</h3>
+            <p>Full Stack Developer</p>
+          </div>
+          
+          <div class="mobile-social">
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+          </div>
+
           <li><a href="#about"        data-lang="nav_about">About</a></li>
           <li><a href="#services"     data-lang="nav_services">Services</a></li>
           <li><a href="#skills"       data-lang="nav_skills">Skills</a></li>
@@ -36,6 +48,12 @@
           <li><a href="#contact"      data-lang="nav_contact">Contact</a></li>
         </ul>
         
+        <div class="menu-toggle" id="menuToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
         <button id="langToggle" class="btn-language">AR</button>
         
         <div class="theme-toggle" id="themeToggle">
@@ -444,35 +462,30 @@
       <p class="copyright" data-lang="footer_copy">© 2026 All Rights Reserved.</p>
     </footer>
 
-    <!-- =========================
-        Lightbox
-    ========================= -->
-
+    <!-- ====================================== Lightbox ====================================== -->
     <div class="lightbox" id="lightbox">
-
-    <span class="close-lightbox">&times;</span>
-
-    <span class="prev-lightbox">
+      <span class="close-lightbox">&times;</span>
+      <span class="prev-lightbox">
         <i class="fa-solid fa-chevron-left"></i>
-    </span>
+      </span>
 
-    <img class="lightbox-image" src="" alt="Gallery Image">
+      <img class="lightbox-image" src="" alt="Gallery Image">
 
-    <span class="next-lightbox">
+      <span class="next-lightbox">
         <i class="fa-solid fa-chevron-right"></i>
-    </span>
+      </span>
 
-    <div class="zoom-controls">
+      <div class="zoom-controls">
         <button id="zoomIn">+</button>
         <button id="zoomOut">−</button>
-    </div>
+      </div>
 
-    <div class="lightbox-caption">
+      <div class="lightbox-caption">
         <h3 class="caption-title"></h3>
         <p class="caption-desc"></p>
+      </div>
     </div>
 
-</div>
-
+    <div class="menu-overlay"></div>
   </body>
 </html>
